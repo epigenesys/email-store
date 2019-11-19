@@ -14,11 +14,6 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install email_store
-
-
 To restrict unauthorised access to the stored emails please mount the engine in:
 
     config/routes.rb
