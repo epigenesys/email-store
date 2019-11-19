@@ -1,0 +1,16 @@
+.emails-table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th {
+  text-align: left;
+}
+
+.email-body {
+  margin-top: 40px;
+}

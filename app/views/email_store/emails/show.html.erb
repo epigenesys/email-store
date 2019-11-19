@@ -1,0 +1,33 @@
+  <%= link_to 'Back', emails_path %>
+
+<p>
+  <strong>
+    Created at:
+  </strong>
+  <%= @email.created_at.strftime("%m/%d/%Y at %I:%M%p") %>
+</p>
+
+<p>
+  <strong>
+    To address:
+  </strong>
+  <%= @email.to_address %>
+</p>
+
+<p>
+  <strong>
+    From address:
+  </strong>
+  <%= @email.from_address %>
+</p>
+
+<p>
+  <strong>
+    Subject:
+  </strong>
+  <%= @email.subject %>
+</p>
+
+<div class='email-body'>
+  <%= @email.body.html_safe %>
+</div>

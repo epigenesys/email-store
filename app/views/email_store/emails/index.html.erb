@@ -1,0 +1,40 @@
+<% if @emails.blank? %>
+  <tr colspan='3'>
+    No emails have been intercepted yet
+  </tr>
+<% else %>
+  <table class="emails-table">
+    <thead>
+      <th>
+        Created at
+      <th>
+        To address
+      <th>
+        From address
+      <th>
+    </thead>
+
+    <tbody>
+        <% for @email in @emails %>
+          <tr>
+            <td>
+              <%= @email.created_at.strftime("%m/%d/%Y at %I:%M%p") %>
+            </td>
+            <td>
+              <%= @email.to_address %>
+            </td>
+            <td>
+              <%= @email.from_address %>
+            </td>
+            <td>
+              <%= link_to 'View', email_path(@email) %>
+              <%= link_to 'Delete', remove_email_path(@email, page: params[:page]) %>
+            </td>
+          </tr>
+        <% end %>
+
+    </tbody>
+  </table>
+
+  <%= will_paginate @emails %>
+<% end %>
