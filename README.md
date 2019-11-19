@@ -20,34 +20,36 @@ Or install it yourself as:
 
 
 To restrict unauthorised access to the stored emails please mount the engine in:
- $ config/routes.rb
+
+    config/routes.rb
 
 appropriately using your specific restrictions:
 ```ruby
-  authenticated :user, ->(user) { user.staff? } do
-    mount EmailStore::Engine, at: "/email_store"
-  end
+authenticated :user, ->(user) { user.staff? } do
+  mount EmailStore::Engine, at: "/email_store"
+end
 ```
 
 Run the install command to copy the migrations over to your app:
 
-  $ rails email_store:install:migrations
+    rails email_store:install:migrations
 
 Run the migrations:
 
-  $ rails db:migrate SCOPE=email_store
+    rails db:migrate SCOPE=email_store
 
 ## Usage
 
 Emails sent in QA and DEMO environment will be automatically intercepted and stored to be previewed at:
-  $ /email_store/emails
+
+    /email_store/emails
 
 ## Warning
 
 Performing deliveries with
-```ruby
-deliver!
-```
+
+    deliver!
+
 will bypass the email interception and cause the email to be delivered!
 
 ## License
