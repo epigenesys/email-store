@@ -7,7 +7,7 @@ Intercepts emails and stores them for viewing in the browser
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'email_store'
+gem "email_store", git: "git@git.epigenesys.org.uk:epigenesys/email-store.git"
 ```
 
 And then execute:
