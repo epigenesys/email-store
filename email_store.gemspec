@@ -26,7 +26,22 @@ Gem::Specification.new do |spec|
   spec.test_files = Dir["spec/**/*"]
 
   spec.add_dependency "rails", ">= 5.2.3"
-  spec.add_development_dependency "pg", ">= 0.18"
-  spec.add_development_dependency "bundler", "~> 2.0"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_dependency "will_paginate"
+
+  spec.add_development_dependency "bundler"
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec", ">= 3.0"
+  spec.add_development_dependency "rspec-rails", ">= 3.0"
+  spec.add_development_dependency "generator_spec"
+  spec.add_development_dependency "capybara"
+  spec.add_development_dependency 'launchy'
+  spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'webmock'
+  spec.add_development_dependency 'byebug'
+  spec.add_development_dependency 'chromedriver-helper'
+  spec.add_development_dependency 'capybara-selenium'
+  spec.add_development_dependency 'puma'
+  spec.add_development_dependency 'will_paginate'
+  spec.add_development_dependency 'factory_bot_rails'
+  spec.add_development_dependency 'database_cleaner'
 end

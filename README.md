@@ -25,6 +25,17 @@ authenticated :user, ->(user) { user.staff? } do
 end
 ```
 
+Register the email interceptor as required for your desired environments in:
+
+    config/initializers
+
+like so:
+```ruby
+if Rails.env.qa? || Rails.env.demo?
+  ActionMailer::Base.register_interceptor(EmailStore::DeliveryInterceptor)
+end
+```
+
 Run the install command to copy the migrations over to your app:
 
     rails email_store:install:migrations

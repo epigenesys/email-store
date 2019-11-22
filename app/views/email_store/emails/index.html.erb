@@ -16,7 +16,7 @@
 
     <tbody>
         <% for @email in @emails %>
-          <tr>
+          <tr id= "email_<%= @email.id %>" >
             <td>
               <%= @email.created_at.strftime("%m/%d/%Y at %I:%M%p") %>
             </td>
